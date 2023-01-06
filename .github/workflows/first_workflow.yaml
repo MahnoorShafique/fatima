@@ -35,7 +35,7 @@ jobs:
          run: pip install scrapy
          
        - name: step4
-         run: scrapy runspider posts_spider.py -o posts.json
+         run: scrapy runspider parker_spider.py -o posts.json
        
        - name: Upload artifact    
          uses: actions/upload-artifact@v2                        
