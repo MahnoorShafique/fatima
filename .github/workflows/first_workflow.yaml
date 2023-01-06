@@ -1,5 +1,5 @@
-name : Firts workflow
-on: Push
+name : First workflow
+on: push
 
 jobs:
    first-job:
