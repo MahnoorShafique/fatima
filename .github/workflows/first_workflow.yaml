@@ -16,9 +16,23 @@ jobs:
          uses: mscoutermarsh/ascii-art-action@master 
          with:
           text: 'Mahnoor'
+         # with syntax is a map of input parameters defined by the action
+         
    second-job:
       name: second-job-name
       runs-on: ubuntu-latest
       steps:
        - name: step1
          run: echo hello world 2
+       - name: checkout to the ubuntu machine from the repo $GITHUB_WORKSPACE
+         uses: actions/checkout@v2
+      
+       - name: set up python/step2 
+         uses: actions/setup-python@v2
+         with:
+            python-version: '3.8'
+       - name: Install Scrapy/step3
+         run: pip install scrapy
+         
+       - name: step4
+         run: scrapy runspider posts_spider.py -o posts.json
