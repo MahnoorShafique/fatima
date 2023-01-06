@@ -7,7 +7,15 @@ jobs:
       runs-on: ubuntu-latest
       steps:
        - name: step1
-         run: echo hello world
+         #actions are individual tasks we can use from 3 sources
+         # using our own custom actions in step 1.
+         run: echo hello world 
+     
+       - name: step2
+        # using actions from someone github repo. here format is username/repo_name@branch
+         uses: mscoutermarsh/ascii-art-action@master 
+         with:
+          text: 'Mahnoor'
    second-job:
       name: second-job-name
       runs-on: ubuntu-latest
