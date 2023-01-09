@@ -31,14 +31,4 @@ jobs:
          uses: actions/setup-python@v2
          with:
             python-version: '3.8'
-       - name: Install Scrapy/step3
-         run: pip install scrapy
-         
-       - name: step4
-         run: scrapy runspider parker_spider.py -o posts.json
-       
-       - name: Upload artifact    
-         uses: actions/upload-artifact@v2                        
-         with:                                 
-          name: posts                                 
-          path: posts.json
+
